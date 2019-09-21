@@ -1,3 +1,51 @@
 {% extends 'layout.html'%} {% block content %}
-<h2>Books</h2>
+
+<div class="container ">
+  <div class="row">
+    <h3 class="header">Featured reviews</h3>
+  </div>
+  <div class="featured-books-container">
+    <div class="row">
+      <div class="col-md-3 col-sm-8 text-center featured-book">
+        <img
+          class="img-fluid"
+          src="https://images2.penguinrandomhouse.com/cover/9780525655398"
+        />
+      </div>
+      <div class="col-md-3 col-sm-8 text-center featured-book">
+        <img
+          class="img-fluid "
+          src="https://images2.penguinrandomhouse.com/cover/9781524742539"
+        />
+      </div>
+      <div class="col-md-3 col-sm-8 text-center featured-book">
+        <img
+          class="img-fluid "
+          src="https://images1.penguinrandomhouse.com/cover/9780553386752"
+        />
+      </div>
+      <div class="col-md-3 col-sm-8 text-center featured-book">
+        <img
+          class="img-fluid "
+          src="https://images4.penguinrandomhouse.com/cover/9780449221099"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="header mt-3">
+      Recently addded reviews
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-8">
+      Book1
+    </div>
+    <div class="col-4">
+      Add
+    </div>
+  </div>
+</div>
+
 {% endblock content %}

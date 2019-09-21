@@ -2,3 +2,37 @@ body {
   font-family: "Gentium Book Basic", serif;
   /* font-family: 'Open Sans', sans-serif; */
 }
+
+.header {
+  padding-left: 15px;
+  font-size: 3rem;
+}
+
+.featured img {
+  height: 400px;
+}
+
+.featured-book {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.featured-books-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .header {
+    font-size: 2rem;
+  }
+  .featured {
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .featured-book {
+    margin-top: 15px;
+  }
+}
