@@ -1,25 +1,18 @@
 # bookpal
 
-The main goal of the project 
+The main goal of the project
 
 ## UX
 
-
 THE LAYOUT:
-
-
 
 USER SCENARIOS:
 
-
 ### Existing Features
-
 
 ### Features Left to Implement
 
 ## Technologies Used
-
-
 
 - [Bootstrap](https://getbootstrap.com/)
 
@@ -38,35 +31,24 @@ The site has been created using:
 - HTML
 - CSS
 - JavaScript
-- Flask (modules: )
+- Flask (modules: flask, render_template, url_for, )
 - MongoDB
 
 ## Testing
 
 Basic set-up:
 
-
-
 Layout:
 
 1. Testing site responsiveness:
-y Tab)
+   y Tab)
 
+1) Testing user scenarios:
 
-1. Testing user scenarios:
-
-   
 ## Deployment
-
-
 
 ### Content
 
-
-
 ### Media
 
-
 ### Acknowledgements
-
-
