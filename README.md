@@ -33,9 +33,6 @@ USER SCENARIOS:
 
   - The project uses **JQuery** to simplify DOM manipulation.
 
-- [Google Maps Platform](https://developers.google.com/maps/documentation/)
-  - The project uses **Maps JavaScript API** to provide information and presentation of desired locations.
-
 The site has been created using:
 
 - HTML
