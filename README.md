@@ -1,5 +1,4 @@
 # bookpal
-# HolidayPal
 
 The main goal of the project 
 
