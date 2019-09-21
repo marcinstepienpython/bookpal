@@ -1,7 +1,7 @@
 {% extends 'layout.html'%} {% block content %}
 
 <div class="container ">
-  <div class="row">
+  <div class="row mt-3">
     <h3 class="header">Featured reviews</h3>
   </div>
   <div class="featured-books-container">
@@ -21,7 +21,7 @@
       <div class="col-md-3 col-sm-8 text-center featured-book">
         <img
           class="img-fluid "
-          src="https://images1.penguinrandomhouse.com/cover/9780553386752"
+          src="https://images2.penguinrandomhouse.com/cover/9780399180453"
         />
       </div>
       <div class="col-md-3 col-sm-8 text-center featured-book">
@@ -34,16 +34,67 @@
   </div>
 
   <div class="row">
-    <div class="header mt-3">
-      Recently addded reviews
+    <div class="col-md-8 header-recently-added mt-3 recently-added-reviews">
+      <div class="row">
+        <div class="col-md-12">
+          Recently added reviews
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-md-12 book-review-intro">
+          <img
+            class="img-fluid"
+            src="https://images2.penguinrandomhouse.com/cover/9781612198262"
+          />
+          <div class="review-synopsis">
+            <h2>"Every Man Dies Alone"</h2>
+            <p class="strong">Reviewed by: Marcin</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
+              neque praesentium? Eveniet totam nemo itaque molestias quae
+              officia, laborum voluptatum dolorum accusantium aliquam! Labore
+              aliquam, voluptatum assumenda error minus quo!
+              <a href="/">Read more...</a>
+            </p>
+            <p><i class="far fa-thumbs-up fa-2x">34</i></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+            <div class="col-md-12 book-review-intro">
+              <img
+                class="img-fluid"
+                src="https://images2.penguinrandomhouse.com/cover/9781612198262"
+              />
+              <div class="review-synopsis">
+                <h2>"Every Man Dies Alone"</h2>
+                <p class="strong">Reviewed by: Marcin</p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
+                  neque praesentium? Eveniet totam nemo itaque molestias quae
+                  officia, laborum voluptatum dolorum accusantium aliquam! Labore
+                  aliquam, voluptatum assumenda error minus quo!
+                  <a href="/">Read more...</a>
+                </p>
+                <p><i class="far fa-thumbs-up fa-2x">34</i></p>
+              </div>
+            </div>
+          </div>
+
+
+
     </div>
-  </div>
-  <div class="row">
-    <div class="col-8">
-      Book1
-    </div>
-    <div class="col-4">
-      Add
+
+    <div class="col-md-4 book-of-the-month-container mt-3">
+      Book of the month
+      <div class="book-of-the-month">
+        <img
+          class="img-fluid"
+          src="https://images4.penguinrandomhouse.com/cover/9780553385540"
+        />
+      </div>
+
     </div>
   </div>
 </div>

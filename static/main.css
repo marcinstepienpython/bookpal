@@ -1,11 +1,30 @@
 body {
   font-family: "Gentium Book Basic", serif;
-  /* font-family: 'Open Sans', sans-serif; */
 }
 
 .header {
   padding-left: 15px;
   font-size: 3rem;
+}
+
+.header-recently-added {
+  font-size: 2rem;
+}
+
+.book-of-the-month-container {
+  font-size: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 320px;
+}
+.book-of-the-month-container img {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 350px;
+}
+.book-of-the-month {
+  background-color: rgb(191, 230, 204);
 }
 
 .featured img {
@@ -22,6 +41,29 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.recently-added-reviews {
+  display: flex;
+  flex-direction: column;
+}
+
+.book-review-intro {
+  background-color: rgb(236, 241, 241);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 330px;
+}
+
+.book-review-intro img {
+  height: 300px;
+}
+
+.review-synopsis {
+  font-size: 1rem;
+  font-family: "Open Sans", sans-serif;
+  padding: 25px;
 }
 
 @media only screen and (max-width: 600px) {
