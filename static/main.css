@@ -3,8 +3,8 @@ body {
 }
 
 .header {
-  padding-left: 15px;
   font-size: 3rem;
+  padding-left: 15px;
 }
 
 .header-recently-added {
@@ -21,10 +21,10 @@ body {
 .book-of-the-month-container img {
   margin-top: 20px;
   margin-bottom: 20px;
-  height: 350px;
+  height: 250px;
 }
 .book-of-the-month {
-  background-color: rgb(191, 230, 204);
+  text-align: center;
 }
 
 .featured img {
@@ -66,15 +66,57 @@ body {
   padding: 25px;
 }
 
+.recently-added-container {
+  margin-top: 2rem;
+  display: flex;
+}
+
+.recently-added-books {
+  flex-grow: 3;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+.book-container {
+  display: flex;
+}
+
+.book-review-synopsis {
+  flex-grow: 2;
+  font-size: 1rem;
+  font-family: "Open Sans", sans-serif;
+  padding: 15px;
+  width: 400px;
+}
+
+.book-cover img {
+  height: 250px;
+}
+
 @media only screen and (max-width: 600px) {
   .header {
     font-size: 2rem;
   }
-  .featured {
+  .recently-added-container {
     flex-direction: column;
-    justify-content: space-around;
   }
+
   .featured-book {
     margin-top: 15px;
+  }
+  .book-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .book-cover img {
+    height: 450px;
+  }
+  .book-review-synopsis {
+    font-size: 1.5rem;
+    text-align: center;
   }
 }
