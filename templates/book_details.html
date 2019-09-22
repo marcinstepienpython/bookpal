@@ -14,7 +14,7 @@
           >
         </p>
       </div>
-      <p>{{ book.teaser }}</p>
+      <p>{{ book.teaser }} <a href='/'>[EDIT]</a></p>
     </div>
 
     <div class="call-to-action mt-3">
@@ -44,17 +44,34 @@
 
   {% endfor %}
   <form>
-        <div class="form-group mt-5">
-            <h3>Add new comment:</h3>
-          <label for="formGroupExampleInput">Name</label>
-          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Your name:">
-        </div>
-        <div class="form-group">
-          <label for="formGroupExampleInput2">Comment</label>
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Your comment about the book:">
-        </div>
-        <button class='btn btn-secondary'>Add comment</button>
-      </form>
+    <div class="form-group mt-5">
+      <h3>Add new comment:</h3>
+      <label for="formGroupExampleInput">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="formGroupExampleInput"
+        placeholder="Your name:"
+      />
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">Comment</label>
+      <input
+        type="text"
+        class="form-control"
+        id="formGroupExampleInput2"
+        placeholder="Your comment about the book:"
+      />
+    </div>
+    <button class="btn btn-secondary mb-3">Add comment</button>
+  </form>
+</div>
+
+<div class="container">
+  <h3 class='delete'>Dangerous zone:</h3>
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-danger mb-3">Delete the book</button>
+  </div>
 </div>
 
 {% endblock%}

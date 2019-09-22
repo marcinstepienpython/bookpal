@@ -5,7 +5,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 offset-md-3">
-      <form method='POST' action="{{url_for('add_new_book')}}" mt-3>
+      <form method="POST" action="{{ url_for('add_new_book') }}" mt-3>
         <div class="form-group">
           <label for="title">Title</label>
           <input
@@ -76,7 +76,7 @@
           />
         </div>
 
-        <button class="btn btn-secondary mb-3">Add book</button>
+        <button class="btn btn-info mb-3">Save book</button>
       </form>
     </div>
   </div>

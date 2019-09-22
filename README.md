@@ -43,8 +43,8 @@ The site has been created using:
 - teaser: String
 - reviewer: String
 - review: String
-- coments: String
-- likes:
+- comments: Array of Objects
+- likes:Int32
 - trending: Boolean
 - book_of_the_month: Boolean
 

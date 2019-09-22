@@ -135,7 +135,9 @@ body {
 .likes-number {
   margin-left: 5px;
 }
-
+.delete {
+  color: red;
+}
 /* media queries*/
 @media only screen and (max-width: 600px) {
   .header {
