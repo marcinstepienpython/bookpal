@@ -31,16 +31,14 @@ body {
   height: 400px;
 }
 
-.featured-book {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .featured-books-container {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.featured-books-container img {
+  height: 400px;
 }
 
 .recently-added-reviews {
@@ -105,8 +103,16 @@ body {
     flex-direction: column;
   }
 
+  .featured-books-container {
+    flex-direction: column;
+  }
+
   .featured-book {
     margin-top: 15px;
+  }
+
+  .featured-book-container img {
+    height: 150px;
   }
   .book-container {
     flex-direction: column;
