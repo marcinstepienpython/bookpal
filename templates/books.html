@@ -4,7 +4,7 @@
   <div class="row mt-3">
     <h3 class="header">Trending books</h3>
   </div>
-  <div class="featured-books-container">
+  <div class="featured-books-container mt-3">
     {% for book in books %} {% if book.trending %}
     <div class="featured-book">
       <a href="{{ book._id }}"><img src="{{ book.cover }}"/></a>
@@ -16,7 +16,7 @@
 <div class="recently-added-container">
   <div class="recently-added-books">
     <div class="heading">
-      <h3>Recently added books</h3>
+      <h2 class='header-recently'>Recently added</h2>
     </div>
     <div class="content mt-3">
       {% for book in recently_added %}
@@ -26,11 +26,12 @@
         </div>
         <div class="book-review-synopsis">
           <h2>{{ book.title }}</h2>
-          <p class="strong">Reviewed by: {{ book.reviewer }}</p>
+          <p class="strong">by {{ book.author }}</p>
+
           <p>
             {{ book.teaser }}
           </p>
-          <p><a href="/">Read more...</a></p>
+          <p><a href="{{ book._id }}">Read more...</a></p>
           <p>
             <i class="far fa-thumbs-up">{{ book.likes }}</i>
           </p>
@@ -40,10 +41,17 @@
     </div>
   </div>
   <div class="book-of-the-month">
-    <h2>Book of the month!</h2>
+    <h2 class='header-recently'>Bestseller</h2>
     {% for book in books_of_the_month %}
 
     <a href="{{ book._id }}"><img src="{{ book.cover }}"/></a>
+    <!-- <a
+      href="https://www.amazon.com/s?k={{ book.author }}+{{
+        book.title
+      }}&i=stripbooks-intl-ship&ref=nb_sb_noss_1?bookpalCoupon25"
+      class="cta"
+      >Save 25%
+    </a> -->
 
     {% endfor %}
   </div>

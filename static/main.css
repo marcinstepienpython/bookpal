@@ -7,8 +7,8 @@ body {
   padding-left: 15px;
 }
 
-.header-recently-added {
-  font-size: 2rem;
+.header-recently {
+  font-size: 3rem;
 }
 
 .book-of-the-month-container {
@@ -25,6 +25,8 @@ body {
 }
 .book-of-the-month {
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .featured img {
@@ -93,6 +95,20 @@ body {
 
 .book-cover img {
   height: 250px;
+}
+
+.cta {
+  font-size: 1.5rem;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.book-of-the-month a {
+  color: rgb(119, 27, 27);
+}
+
+.book-of-the-month a:hover {
+  text-decoration: none;
 }
 
 @media only screen and (max-width: 600px) {
