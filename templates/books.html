@@ -1,74 +1,52 @@
 {% extends 'layout.html'%} {% block content %}
 
 <div class="container ">
-  
-    <div class="row mt-3">
-      <h3 class="header">Trending books</h3>
-    </div>
-    <div class="featured-books-container">
-      
-        <div class="featured-book">
-          <img
-            class="img"
-            src="https://images2.penguinrandomhouse.com/cover/9780525655398"
-          />
-        </div>
-
-        
-      </div>
-    
+  <div class="row mt-3">
+    <h3 class="header">Trending books</h3>
   </div>
-
-  <div class="recently-added-container">
-    <div class="recently-added-books">
-      <div class="heading">
-        <h3>Recently added books</h3>
-      </div>
-      <div class="content mt-3">
-        <div class="book-container mt-3">
-          <div class="book-cover">
-            <img
-              src="https://images2.penguinrandomhouse.com/cover/9781612198262"
-            />
-          </div>
-          <div class="book-review-synopsis">
-            <h2>"Every Man Dies Alone"</h2>
-            <p class="strong">Reviewed by: Marcin</p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
-              neque praesentium? Eveniet totam nemo itaque molestias quae
-              officia!
-            </p>
-            <p><a href="/">Read more...</a></p>
-            <p><i class="far fa-thumbs-up">34</i></p>
-          </div>
-        </div>
-
-        <div class="book-container mt-3">
-          <div class="book-cover">
-            <img
-              src="https://images2.penguinrandomhouse.com/cover/9781612198262"
-            />
-          </div>
-          <div class="book-review-synopsis">
-            <h2>"Every Man Dies Alone"</h2>
-            <p class="strong">Reviewed by: Marcin</p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
-              neque praesentium? Eveniet totam nemo itaque molestias quae
-              officia!
-            </p>
-            <p><a href="/">Read more...</a></p>
-            <p><i class="far fa-thumbs-up">34</i></p>
-          </div>
-        </div>
-      </div>
+  <div class="featured-books-container">
+    {% for book in books %} {% if book.trending %}
+    <div class="featured-book">
+      <a href="{{ book._id }}"><img src="{{ book.cover }}"/></a>
     </div>
-    <div class="book-of-the-month">
-      <h2>Book of the month!</h2>
-      {% for book in books %} {% if book.book_of_the_month %}
-      <img class="img-fluid" src="{{ book.cover }}" /> {% endif %} {% endfor %}
-    </div>
+    {% endif %} {% endfor %}
   </div>
 </div>
+
+<div class="recently-added-container">
+  <div class="recently-added-books">
+    <div class="heading">
+      <h3>Recently added books</h3>
+    </div>
+    <div class="content mt-3">
+      {% for book in recently_added %}
+      <div class="book-container mt-3">
+        <div class="book-cover">
+          <a href="{{ book._id }}"><img src="{{ book.cover }}"/></a>
+        </div>
+        <div class="book-review-synopsis">
+          <h2>{{ book.title }}</h2>
+          <p class="strong">Reviewed by: {{ book.reviewer }}</p>
+          <p>
+            {{ book.teaser }}
+          </p>
+          <p><a href="/">Read more...</a></p>
+          <p>
+            <i class="far fa-thumbs-up">{{ book.likes }}</i>
+          </p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="book-of-the-month">
+    <h2>Book of the month!</h2>
+    {% for book in books_of_the_month %}
+
+    <a href="{{ book._id }}"><img src="{{ book.cover }}"/></a>
+
+    {% endfor %}
+  </div>
+</div>
+
 {% endblock content %}

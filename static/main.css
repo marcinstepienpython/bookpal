@@ -38,7 +38,7 @@ body {
 }
 
 .featured-books-container img {
-  height: 400px;
+  height: 380px;
 }
 
 .recently-added-reviews {
@@ -109,6 +109,7 @@ body {
 
   .featured-book {
     margin-top: 15px;
+    margin-right: 5px;
   }
 
   .featured-book-container img {

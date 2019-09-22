@@ -15,7 +15,10 @@ mongo = PyMongo(app)
 
 @app.route('/')
 def home():
-    return render_template('books.html', books=mongo.db.books.find())
+    return render_template('books.html', 
+    books=mongo.db.books.find(), 
+    recently_added=mongo.db.books.find(), 
+    books_of_the_month=mongo.db.books.find({"book_of_the_month": True}))
 
 
 if __name__ == '__main__':
