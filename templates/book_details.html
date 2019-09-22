@@ -1,0 +1,60 @@
+{% extends 'layout.html' %} {% block content %}
+<div class="book-details-container">
+  <div class="details-img">
+    <img src="{{ book.cover }}" />
+  </div>
+  <div class="details-data">
+    <div class="teaser">
+      <h1>"{{ book.title }}"</h1>
+      <p>by {{ book.author }}</p>
+      <div class="like">
+        <p>
+          <i class="far fa-thumbs-up fa"
+            ><span class="likes-number">{{ book.likes }}</span></i
+          >
+        </p>
+      </div>
+      <p>{{ book.teaser }}</p>
+    </div>
+
+    <div class="call-to-action mt-3">
+      <h3>Get 25% discount with our coupon from Amazon</h3>
+      <a
+        href="https://www.amazon.com/s?k={{ book.author }}+{{
+          book.title
+        }}&i=stripbooks-intl-ship&ref=nb_sb_noss_1?bookpalCoupon25"
+        class="btn btn-info"
+        >Buy on Amazon
+      </a>
+    </div>
+  </div>
+</div>
+<div class="container reviews">
+  <div class="reviews mt-5">
+    <h1>Book's Review</h1>
+    <p>by {{ book.reviewer }}</p>
+
+    <p>{{ book.review }}</p>
+  </div>
+</div>
+<div class="container comments mt-3">
+  <h1>Comments</h1>
+  {% for comment in book.coments %}
+  <i>{{ comment.name }}: {{ comment.comment }}</i>
+
+  {% endfor %}
+  <form>
+        <div class="form-group mt-5">
+            <h3>Add new comment:</h3>
+          <label for="formGroupExampleInput">Name</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput2">Comment</label>
+          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+        </div>
+        <button class='btn btn-secondary'>Add comment</button>
+      </form>
+</div>
+
+{% endblock%}

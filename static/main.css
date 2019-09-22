@@ -111,6 +111,32 @@ body {
   text-decoration: none;
 }
 
+/* book details page  */
+
+.book-details-container {
+  display: flex;
+}
+
+.details-data {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.details-data h3 {
+  color: #17a2b8;
+}
+
+.comments {
+  background-color: rgb(236, 241, 241);
+  margin-bottom: 30px;
+}
+
+.likes-number {
+  margin-left: 5px;
+}
+
+/* media queries*/
 @media only screen and (max-width: 600px) {
   .header {
     font-size: 2rem;

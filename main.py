@@ -13,6 +13,11 @@ app.config['MONGO_URI'] = "mongodb+srv://mstest:" + pwd + \
 mongo = PyMongo(app)
 
 
+@app.route('/<book_id>')
+def book_details(book_id):
+    the_book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
+    return render_template('book_details.html', book = the_book)
+
 @app.route('/')
 def home():
     return render_template('books.html', 
