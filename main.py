@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for,request, redirect
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
@@ -16,14 +16,26 @@ mongo = PyMongo(app)
 @app.route('/<book_id>')
 def book_details(book_id):
     the_book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
-    return render_template('book_details.html', book = the_book)
+    return render_template('book_details.html', book=the_book)
+
+
+@app.route('/new_book')
+def new_book():
+    return render_template('new_book.html')
+
+@app.route('/add_new_book', methods=['POST'])
+def add_new_book():
+    books = mongo.db.books
+    books.insert_one(request.form.to_dict())
+    return redirect(url_for('home'))
+
 
 @app.route('/')
 def home():
-    return render_template('books.html', 
-    books=mongo.db.books.find(), 
-    recently_added=mongo.db.books.find(), 
-    books_of_the_month=mongo.db.books.find({"book_of_the_month": True}))
+    return render_template('books.html',
+                           books=mongo.db.books.find(),
+                           recently_added=mongo.db.books.find(),
+                           books_of_the_month=mongo.db.books.find({"book_of_the_month": True}))
 
 
 if __name__ == '__main__':
