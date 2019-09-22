@@ -79,12 +79,17 @@
       </div>
     </div>
     <div class="book-of-the-month">
-      <h2>Book of the year!</h2>
+      <h2>Book of the month!</h2>
       <img
         class="img-fluid"
         src="https://images4.penguinrandomhouse.com/cover/9780553385540"
       />
     </div>
   </div>
+</div>
+<div class="data">
+  {% for book in books %}
+  <h1>title: {{ book.title }}</h1>
+  {% endfor %}
 </div>
 {% endblock content %}

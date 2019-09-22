@@ -36,7 +36,7 @@ The site has been created using:
 
 ## Database collection schema
 
-- _id: ObjectId
+- \_id: ObjectId
 - title: String
 - author: String
 - cover: String
@@ -44,7 +44,9 @@ The site has been created using:
 - reviewer: String
 - review: String
 - coments: String
-- likes: Int32
+- likes:
+- trending: Boolean
+- book_of_the_month: Boolean
 
 ## Testing
 
