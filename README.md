@@ -34,6 +34,18 @@ The site has been created using:
 - Flask (modules: flask, render_template, url_for, )
 - MongoDB
 
+## Database collection schema
+
+- _id: ObjectId
+- title: String
+- author: String
+- cover: String
+- teaser: String
+- reviewer: String
+- review: String
+- coments: String
+- likes: Int32
+
 ## Testing
 
 Basic set-up:
