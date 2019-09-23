@@ -26,14 +26,16 @@
         </div>
         <div class="book-review-synopsis">
           <h2>{{ book.title }}</h2>
-          <p class="strong">by {{ book.author }}</p>
+          <p class="strong author">by {{ book.author }}</p>
 
           <p>
             {{ book.teaser }}
           </p>
           <p><a href="{{ book._id }}">Read more...</a></p>
           <p>
-            <i class="far fa-thumbs-up">{{ book.likes }}</i>
+              {% for heart in book.hearts %}
+              <i class="fas fa-star"></i>
+              {% endfor %}
           </p>
         </div>
       </div>

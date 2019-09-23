@@ -11,7 +11,7 @@
         <p>
 
       {% for heart in book.hearts %}
-      <i class="fas fa-heart"></i>
+      <i class="fas fa-star"></i>
       {% endfor %}
           <form action="{{ url_for('add_heart', book_id=book._id)}}" method='POST'>
               <button class='btn btn-outline-secondary'>Vote for this book</button>
@@ -30,7 +30,7 @@
           book.title
         }}&i=stripbooks-intl-ship&ref=nb_sb_noss_1?bookpalCoupon25"
         class="btn btn-info"
-        >Buy on Amazon
+        target="_blank" >Buy on Amazon
       </a>
     </div>
   </div>
@@ -76,10 +76,9 @@
   </form>
 </div>
 
-<div class="container">
-  <h3 class='delete'>Dangerous zone</h3>
-  
-      <a href="{{url_for('delete_book', book_id=book._id)}}" class='btn btn-outline-danger mb-3'>Delete the book </a>
+<div class="container dangerous">
+    
+      <a href="{{url_for('delete_book', book_id=book._id)}}" class='btn btn-danger mt-3 mb-3'>Delete the book </a>
 
 </div>
 
