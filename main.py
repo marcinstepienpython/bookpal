@@ -51,19 +51,19 @@ def update_book(book_id):
     })
     return redirect(url_for('book_details', book_id=book_id))
 
+@app.route('/hearts/<book_id>', methods=['POST'])
+def add_heart(book_id):
+    books = mongo.db.books
+    books.update({"_id": ObjectId(book_id)}, {"$push": {"hearts": {'heart':"yes"}}})
+    
+    return redirect(url_for('book_details', book_id=book_id))
+
 @app.route('/comments/<book_id>', methods=['POST'])
 def add_comment(book_id):
     books = mongo.db.books
     books.update({"_id": ObjectId(book_id)}, {"$push": {"coments": {
         "name":request.form.get('name'),
         "comment":request.form.get('comment')}}})
-    
-    return redirect(url_for('book_details', book_id=book_id))
-
-@app.route('/likes/<book_id>', methods=['POST'])
-def inc_likes(book_id):
-    books = mongo.db.books
-    books.update({"_id": ObjectId(book_id)}, {"$inc": {"likes": 1}})
     
     return redirect(url_for('book_details', book_id=book_id))
 
