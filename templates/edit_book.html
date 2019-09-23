@@ -1,11 +1,15 @@
 {% extends 'layout.html' %} {% block content %}
 
-<h2 class="header mt-3 text-center">Add new book</h2>
+<h2 class="header mt-3 text-center">Any changes?</h2>
 
 <div class="container">
   <div class="row">
     <div class="col-md-6 offset-md-3">
-      <form method="POST" action="{{ url_for('add_new_book') }}" mt-3>
+      <form
+        method="POST"
+        action="{{ url_for('update_book', book_id=book._id) }}"
+        mt-3
+      >
         <div class="form-group">
           <label for="title">Title*</label>
           <input
@@ -13,7 +17,7 @@
             class="form-control"
             id="title"
             name="title"
-            placeholder="Title"
+            value="{{ book.title }}"
             required
           />
         </div>
@@ -24,7 +28,7 @@
             class="form-control"
             id="author"
             name="author"
-            placeholder="Author"
+            value="{{ book.author }}"
             required
           />
         </div>
@@ -35,18 +39,18 @@
             class="form-control"
             id="cover"
             name="cover"
-            placeholder="Link to to book cover"
+            value="{{ book.cover }}"
             required
           />
         </div>
         <div class="form-group">
-          <label for="teaser">Tease*</label>
+          <label for="teaser">Teaser*</label>
           <input
             type="text"
             class="form-control"
             id="teaser"
             name="teaser"
-            placeholder="What is this book about?"
+            value="{{ book.teaser }}"
             required
           />
         </div>
@@ -57,20 +61,20 @@
             class="form-control"
             id="reviewer"
             name="reviewer"
-            placeholder="What is your name?"
+            value="{{ book.reviewer }}"
             required
           />
         </div>
         <div class="form-group">
           <label for="review">Review*</label>
-          <textarea
+          <input
             type="text"
             class="form-control"
             id="review"
             name="review"
-            placeholder="Type your review here"
+            value="{{ book.review }}"
             required
-          ></textarea>
+          />
         </div>
         <div class="form-group">
           <input
@@ -78,9 +82,27 @@
             class="form-control"
             id="likes"
             name="likes"
-            value="0"
+            value={{book.likes}}
           />
         </div>
+        <div class="form-group">
+                <input
+                  type="hidden"
+                  class="form-control"
+                  id="trending"
+                  name="trending"
+                  value={{ book.trending }}
+                />
+              </div>
+              <div class="form-group">
+                    <input
+                      type="hidden"
+                      class="form-control"
+                      id="book_of_the_month"
+                      name="book_of_the_month"
+                      value={{ book.book_of_the_month }}
+                    />
+                  </div>
 
         <button class="btn btn-info mb-3">Save book</button>
       </form>

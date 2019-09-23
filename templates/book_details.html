@@ -14,11 +14,11 @@
           >
         </p>
       </div>
-      <p>{{ book.teaser }} <a href='/'><span class='edit'><i class="fas fa-pencil-alt"></i></span></a></p>
+      <p>{{ book.teaser }} <a href="{{ url_for('edit_book', book_id=book._id)}}"><span class='edit'><i class="fas fa-pencil-alt"></i></span></a></p>
     </div>
 
     <div class="call-to-action mt-3">
-      <h3>Get 25% discount with our coupon from Amazon</h3>
+      <h3>Get 25% discount with our coupon from Amazon!</h3>
       <a
         href="https://www.amazon.com/s?k={{ book.author }}+{{
           book.title
@@ -34,14 +34,15 @@
     <h1>Book's Review</h1>
     <p>by {{ book.reviewer }}</p>
 
-    <p>{{ book.review }} <a href='/'><span class='edit'><i class="fas fa-pencil-alt"></i></span></a></p>
+    <p>{{ book.review }} <a href="{{ url_for('edit_book', book_id=book._id)}}"><span class='edit'><i class="fas fa-pencil-alt"></i></span></a></p>
   </div>
 </div>
 <div class="container comments mt-3">
   <h1>Comments</h1>
   {% for comment in book.coments %}
-  <i>{{ comment.name }}: {{ comment.comment }}</i>
 
+ <i>{{ comment.name }}: {{ comment.comment }}</i>
+ 
   {% endfor %}
   <form>
     <div class="form-group mt-5">
