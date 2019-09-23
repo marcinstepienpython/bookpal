@@ -41,15 +41,16 @@
   <h1>Comments</h1>
   {% for comment in book.coments %}
 
- <i>{{ comment.name }}: {{ comment.comment }}</i>
+ <p class='comment'><i>{{ comment.name }}: {{ comment.comment }}</i></p>
  
   {% endfor %}
-  <form>
+  <form method="POST" action="{{ url_for('add_comment', book_id=book._id) }}" mt-3>
     <div class="form-group mt-5">
       <h3>Add new comment:</h3>
       <label for="formGroupExampleInput">Name</label>
       <input
         type="text"
+        name='name'
         class="form-control"
         id="formGroupExampleInput"
         placeholder="Your name:"
@@ -59,6 +60,7 @@
       <label for="formGroupExampleInput2">Comment</label>
       <input
         type="text"
+        name='comment'
         class="form-control"
         id="formGroupExampleInput2"
         placeholder="Your comment about the book:"
