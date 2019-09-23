@@ -54,7 +54,7 @@ def update_book(book_id):
 @app.route('/hearts/<book_id>', methods=['POST'])
 def add_heart(book_id):
     books = mongo.db.books
-    books.update({"_id": ObjectId(book_id)}, {"$push": {"hearts": {'heart':"yes"}}})
+    books.update({"_id": ObjectId(book_id)}, {"$push": {"hearts": {'heart':"userName"}}})
     
     return redirect(url_for('book_details', book_id=book_id))
 

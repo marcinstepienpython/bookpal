@@ -47,6 +47,7 @@ The site has been created using:
 - likes:Int32
 - trending: Boolean
 - book_of_the_month: Boolean
+- hearts: Array of Objects
 
 ## Testing
 
