@@ -127,6 +127,10 @@ body {
   color: #17a2b8;
 }
 
+.edit {
+  color: dimgray;
+}
+
 .comments {
   background-color: rgb(236, 241, 241);
   margin-bottom: 30px;

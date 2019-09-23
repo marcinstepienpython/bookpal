@@ -14,7 +14,7 @@
           >
         </p>
       </div>
-      <p>{{ book.teaser }} <a href='/'>[EDIT]</a></p>
+      <p>{{ book.teaser }} <a href='/'><span class='edit'><i class="fas fa-pencil-alt"></i></span></a></p>
     </div>
 
     <div class="call-to-action mt-3">
@@ -34,7 +34,7 @@
     <h1>Book's Review</h1>
     <p>by {{ book.reviewer }}</p>
 
-    <p>{{ book.review }}</p>
+    <p>{{ book.review }} <a href='/'><span class='edit'><i class="fas fa-pencil-alt"></i></span></a></p>
   </div>
 </div>
 <div class="container comments mt-3">
