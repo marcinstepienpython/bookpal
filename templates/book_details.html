@@ -69,10 +69,10 @@
 </div>
 
 <div class="container">
-  <h3 class='delete'>Dangerous zone:</h3>
-  <div class="btn-group" role="group" aria-label="Basic example">
-    <button type="button" class="btn btn-danger mb-3">Delete the book</button>
-  </div>
+  <h3 class='delete'>Dangerous zone</h3>
+  
+      <a href="{{url_for('delete_book', book_id=book._id)}}" class='btn btn-danger mb-3'>Delete the book </a>
+
 </div>
 
 {% endblock%}

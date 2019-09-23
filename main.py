@@ -51,6 +51,11 @@ def update_book(book_id):
     })
     return redirect(url_for('book_details', book_id=book_id))
 
+@app.route('/delete_book/<book_id>')
+def delete_book(book_id):
+    mongo.db.books.remove({'_id': ObjectId(book_id)})
+    return redirect(url_for('home'))
+
 @app.route('/')
 def home():
     return render_template('books.html',
