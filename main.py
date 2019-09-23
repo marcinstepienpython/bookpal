@@ -60,6 +60,13 @@ def add_comment(book_id):
     
     return redirect(url_for('book_details', book_id=book_id))
 
+@app.route('/likes/<book_id>', methods=['POST'])
+def inc_likes(book_id):
+    books = mongo.db.books
+    books.update({"_id": ObjectId(book_id)}, {"$inc": {"likes": 1}})
+    
+    return redirect(url_for('book_details', book_id=book_id))
+
 @app.route('/delete_book/<book_id>')
 def delete_book(book_id):
     mongo.db.books.remove({'_id': ObjectId(book_id)})

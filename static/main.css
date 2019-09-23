@@ -146,6 +146,7 @@ body {
 
 .comment {
   padding-left: 15px;
+  color: rgb(3, 26, 77);
 }
 /* media queries*/
 @media only screen and (max-width: 600px) {
