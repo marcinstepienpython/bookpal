@@ -115,7 +115,7 @@ The application has been deployed to Heroku server.
 
 ### Content
 
-The application uses books descriptions from http://www.Wikipedia.com and http://www.amazon.com
+The application uses books descriptions from http://www.wikipedia.com and http://www.amazon.com
 
 ### Media
 
@@ -127,5 +127,5 @@ The app uses several cover images from penguinrandomhouse.com:
 
 ### Acknowledgements
 
-Codeinstitute https://codeinstitute.net
+Codeinstitute https://codeinstitute.net and
 Corey Schafer https://www.youtube.com/channel/UCCezIgC97PvUuR4_gbFUs5g
