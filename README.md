@@ -3,7 +3,7 @@
 Book review and recommendation site.
 
 repository: https://github.com/marcinstepienpython/bookpal
-application is available here:
+application is available here: https://bookpal-app.herokuapp.com/
 
 # Project goal
 
@@ -117,7 +117,13 @@ The deployment process:
 
 - created new heroku app calle: bookpal-app
 - login to heroku from terminal
--
+- adding heroku remote => heroku git:remote -a bookpal-app
+- requirements file => sudo pip3 freeze --local > requirements.txt
+- git push heroku master
+- adding Profile => echo web: python main.py > Procfile
+- git push heroku master
+- start the app => heroku ps:scale web=1
+- setting config vars on Heroku
 
 ### Content
 
