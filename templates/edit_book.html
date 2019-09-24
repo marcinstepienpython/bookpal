@@ -1,5 +1,7 @@
 {% extends 'layout.html' %} {% block content %}
 
+<!-- FORM FOR EDITING A BOOK -->
+<!-- DATA RECEIVED AS {{ BOOK. }} -->
 <h2 class="header mt-3 text-center">Any changes?</h2>
 
 <div class="container">
@@ -82,27 +84,31 @@
             class="form-control"
             id="likes"
             name="likes"
-            value={{book.likes}}
+            value="{{ book.likes }}"
           />
         </div>
         <div class="form-group">
-                <input
-                  type="hidden"
-                  class="form-control"
-                  id="trending"
-                  name="trending"
-                  value={{ book.trending }}
-                />
-              </div>
-              <div class="form-group">
-                    <input
-                      type="hidden"
-                      class="form-control"
-                      id="book_of_the_month"
-                      name="book_of_the_month"
-                      value={{ book.book_of_the_month }}
-                    />
-                  </div>
+          <input
+            type="hidden"
+            class="form-control"
+            id="trending"
+            name="trending"
+            value="{{"
+            book.trending
+            }}
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="hidden"
+            class="form-control"
+            id="book_of_the_month"
+            name="book_of_the_month"
+            value="{{"
+            book.book_of_the_month
+            }}
+          />
+        </div>
 
         <button class="btn btn-info mb-3">Save book</button>
       </form>

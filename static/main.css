@@ -1,3 +1,6 @@
+/* MAIN PAGE*/
+
+/* DEFAULT FONT*/
 body {
   font-family: "Gentium Book Basic", serif;
 }
@@ -11,6 +14,7 @@ body {
   font-size: 3rem;
 }
 
+/* CONTAINER FOR THE BOOK OF THE MONTH */
 .book-of-the-month-container {
   font-size: 2rem;
   text-align: center;
@@ -33,12 +37,14 @@ body {
   height: 400px;
 }
 
+/* CONTAINER FOR THE TRENDING BOOKS*/
 .featured-books-container {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
+/* SECTION: RECENTLY ADDED BOOKS */
 .featured-books-container img {
   height: 380px;
 }
@@ -111,7 +117,7 @@ body {
   text-decoration: none;
 }
 
-/* book details page  */
+/* BOOK DETAILS PAGE  */
 
 .book-details-container {
   display: flex;
@@ -152,7 +158,9 @@ body {
 .dangerous {
   background-color: rgb(236, 241, 241);
 }
-/* media queries*/
+
+/* MEDIA QUERIES */
+
 @media only screen and (max-width: 600px) {
   .header {
     font-size: 2rem;

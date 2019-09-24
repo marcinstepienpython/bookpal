@@ -51,6 +51,7 @@ Available user scenarios:
 - Algorithms for awarding stars (rating system) => limitation of voting by a single user (one vote)
 - Algorithm for selection of trending books
 - Algorithm for selecion of bestsellers
+- Adding AUTHORS page => searching by author => books by authors
 
 ## Technologies Used
 

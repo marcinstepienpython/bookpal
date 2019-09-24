@@ -5,6 +5,8 @@ from bson.objectid import ObjectId
 
 app = Flask(__name__)
 
+# DATABASE ENVIRONMENT
+
 app.config['MONGO_DBNAME'] = "MSTEST"
 pwd = os.environ['MONGO_DB_PASS']
 app.config['MONGO_URI'] = "mongodb+srv://mstest:" + pwd + \
@@ -12,13 +14,14 @@ app.config['MONGO_URI'] = "mongodb+srv://mstest:" + pwd + \
 
 mongo = PyMongo(app)
 
-
+# ROUTES
+# BOOK DETAILS
 @app.route('/<book_id>')
 def book_details(book_id):
     the_book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
     return render_template('book_details.html', book=the_book)
 
-
+# CREATING NEW BOOK
 @app.route('/new_book')
 def new_book():
     return render_template('new_book.html')
@@ -29,6 +32,7 @@ def add_new_book():
     books.insert_one(request.form.to_dict())
     return redirect(url_for('home'))
 
+#UPDATING BOOK
 @app.route('/edit_book/<book_id>')
 def edit_book(book_id):
     the_book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
@@ -51,6 +55,7 @@ def update_book(book_id):
     })
     return redirect(url_for('book_details', book_id=book_id))
 
+# UPVOTING
 @app.route('/hearts/<book_id>', methods=['POST'])
 def add_heart(book_id):
     books = mongo.db.books
@@ -58,6 +63,7 @@ def add_heart(book_id):
     
     return redirect(url_for('book_details', book_id=book_id))
 
+# ADDING COMENTS
 @app.route('/comments/<book_id>', methods=['POST'])
 def add_comment(book_id):
     books = mongo.db.books
@@ -67,11 +73,13 @@ def add_comment(book_id):
     
     return redirect(url_for('book_details', book_id=book_id))
 
+# DELETING BOOK
 @app.route('/delete_book/<book_id>')
 def delete_book(book_id):
     mongo.db.books.remove({'_id': ObjectId(book_id)})
     return redirect(url_for('home'))
 
+# MAIN PAGE
 @app.route('/')
 def home():
     return render_template('books.html',
@@ -80,6 +88,7 @@ def home():
                            books_of_the_month=mongo.db.books.find({"book_of_the_month": True}))
 
 
+# APP INITIALIZATION
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),

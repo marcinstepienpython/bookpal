@@ -1,15 +1,19 @@
 {% extends 'layout.html' %} {% block content %}
+
 <div class="book-details-container">
+  
+  <!-- BOOOK COVER  -->
   <div class="details-img">
     <img src="{{ book.cover }}" />
   </div>
+  <!--BOOK DETAILS-->
   <div class="details-data">
     <div class="teaser">
       <h1>"{{ book.title }}"</h1>
       <p>by {{ book.author }}</p>
       <div class="like">
         <p>
-
+      <!-- RATING -->
       {% for heart in book.hearts %}
       <i class="fas fa-star"></i>
       {% endfor %}
@@ -22,7 +26,7 @@
 
       <p>{{ book.teaser }} <a href="{{ url_for('edit_book', book_id=book._id)}}"><span class='edit'><i class="fas fa-pencil-alt"></i></span></a></p>
     </div>
-
+    <!-- CALL TO ACTION - BUY THE BOOK ON AMAZON -->
     <div class="call-to-action mt-3">
       <h3>Get 25% discount with our coupon from Amazon!</h3>
       <a
@@ -35,6 +39,7 @@
     </div>
   </div>
 </div>
+<!-- BOOK REVIEW -->
 <div class="container reviews">
   <div class="reviews mt-5">
     <h1>Book's Review</h1>
@@ -43,6 +48,7 @@
     <p>{{ book.review }} <a href="{{ url_for('edit_book', book_id=book._id)}}"><span class='edit'><i class="fas fa-pencil-alt"></i></span></a></p>
   </div>
 </div>
+<!-- COMMENTS -->
 <div class="container comments mt-3">
   <h1>Comments</h1>
   {% for comment in book.coments %}
@@ -50,6 +56,7 @@
  <p class='comment'><i>{{ comment.name }}: "{{ comment.comment }}"</i></p>
  
   {% endfor %}
+  <!-- ADDING NEW COMMENT -->
   <form method="POST" action="{{ url_for('add_comment', book_id=book._id) }}" mt-3>
     <div class="form-group mt-5">
       <h3>Add new comment:</h3>
@@ -75,7 +82,7 @@
     <button class="btn btn-info mb-3">Add comment</button>
   </form>
 </div>
-
+<!-- DELETE THE BOOK -->
 <div class="container dangerous">
     
       <a href="{{url_for('delete_book', book_id=book._id)}}" class='btn btn-danger mt-3 mb-3'>Delete the book </a>
