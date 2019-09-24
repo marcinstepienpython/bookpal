@@ -113,6 +113,12 @@ Testing user scenarios:
 
 The application has been deployed to Heroku server.
 
+The deployment process:
+
+- created new heroku app calle: bookpal-app
+- login to heroku from terminal
+-
+
 ### Content
 
 The application uses books descriptions from http://www.wikipedia.com and http://www.amazon.com
